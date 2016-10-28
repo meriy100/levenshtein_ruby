@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile('foo')
+create_makefile('levenshtein_ruby')

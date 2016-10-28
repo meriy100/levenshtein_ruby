@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ruby.h>
 
-VALUE cLevenshtein; /* Fooクラス */
+VALUE cLevenshtein;
 
 
 VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
@@ -53,14 +53,8 @@ VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
     return INT2NUM(matrix[len1][len2]);
 }
 
-void Init_levensthein()
+void Init_levenshtein_ruby()
 {
-  /* Fooクラスを定義 */
   cLevenshtein = rb_define_class("Levenshtein", rb_cObject);
-
-  /*
-    Fooクラスに引数0個のbarメソッドを定義
-    barメソッドが呼ばれると、bar_funcが実行される
-  */
   rb_define_method(cLevenshtein, "distance", RUBY_METHOD_FUNC(distance_func), 2);
 }
