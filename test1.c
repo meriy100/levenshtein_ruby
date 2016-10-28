@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <ruby.h>
 
-VALUE cFoo; /* Fooクラス */
+VALUE cLevenshtein; /* Fooクラス */
 
 
-VALUE bar_func(VALUE self, VALUE s_word1, VALUE s_word2)
+VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
 {
     char* word1 = StringValuePtr(s_word1);
     char* word2 = StringValuePtr(s_word2);
@@ -53,14 +53,14 @@ VALUE bar_func(VALUE self, VALUE s_word1, VALUE s_word2)
     return INT2NUM(matrix[len1][len2]);
 }
 
-void Init_foo()
+void Init_levensthein()
 {
   /* Fooクラスを定義 */
-  cFoo = rb_define_class("Foo", rb_cObject);
+  cLevenshtein = rb_define_class("Levenshtein", rb_cObject);
 
   /*
     Fooクラスに引数0個のbarメソッドを定義
     barメソッドが呼ばれると、bar_funcが実行される
   */
-  rb_define_method(cFoo, "dist", RUBY_METHOD_FUNC(bar_func), 2);
+  rb_define_method(cLevenshtein, "distance", RUBY_METHOD_FUNC(distance_func), 2);
 }
