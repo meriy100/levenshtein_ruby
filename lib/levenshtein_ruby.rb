@@ -1,5 +1,5 @@
 require "levenshtein_ruby/version"
+require "levenshtein_ruby/levenshtein_ruby"
 
-module LevenshteinRuby
-  # Your code goes here...
+class LevenshteinRuby
 end
