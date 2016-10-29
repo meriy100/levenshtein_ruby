@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["meriy100"]
   spec.email         = ["ttattataa@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.description   = %q{Levenshtein distance}
+  spec.summary       = %q{Levenshtein distance}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
   spec.extensions    = %w[ext/levenshtein_ruby/extconf.rb]
