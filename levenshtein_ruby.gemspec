@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.description   = %q{Levenshtein distance}
   spec.summary       = %q{Levenshtein distance}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/meriy100/levenshtein_ruby"
   spec.license       = "MIT"
   spec.extensions    = %w[ext/levenshtein_ruby/extconf.rb]
 
