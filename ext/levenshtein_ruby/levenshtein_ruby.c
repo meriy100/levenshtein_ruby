@@ -55,6 +55,6 @@ VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
 
 void Init_levenshtein_ruby()
 {
-  cLevenshtein = rb_define_class("Levenshtein", rb_cObject);
-  rb_define_method(cLevenshtein, "distance", RUBY_METHOD_FUNC(distance_func), 2);
+  cLevenshtein = rb_define_module("Levenshtein");
+  rb_define_module_function(cLevenshtein, "distance", RUBY_METHOD_FUNC(distance_func), 2);
 }
