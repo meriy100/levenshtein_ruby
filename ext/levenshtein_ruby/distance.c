@@ -4,12 +4,12 @@
 
 int* get_point(int** double_pointer, int x, int y)
 {
-  return *(double_pointer + sizeof(int*) * x) + sizeof(int) * y;
+  return *(double_pointer + x) + y;
 }
 
 void set_point(int** double_pointer, int x, int y, int value)
 {
-  *(*(double_pointer + sizeof(int*) * x) + sizeof(int) * y) = value;
+  *(*(double_pointer + x) + y) = value;
 }
 
 int distance(const char* word1, const char* word2)
@@ -21,7 +21,7 @@ int distance(const char* word1, const char* word2)
   int** matrix;
   matrix = (int**)malloc((len1+1) * sizeof(int*));
   for(i = 0; i <= len1; i++) {
-    *(matrix + i*sizeof(int*)) = (int*)malloc((len2+1) * sizeof(int));
+    *(matrix + i) = (int*)malloc((len2+1) * sizeof(int));
   }
   fprintf(stderr, "len1: %d\n", len1);
   fprintf(stderr, "len2: %d\n", len2);
