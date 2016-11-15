@@ -11,13 +11,13 @@ VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
     char* word2 = StringValuePtr(s_word2);
     int len1 = strlen(word1);
     int len2 = strlen(word2);
+    int result;
     int** matrix;
-    matrix = (int)malloc(len1 * sizeof(int));
+    matrix = (int**)malloc(len1 * sizeof(int));
     for(i = 0; i < len1; i++) {
       matrix[i] = (int)malloc(len2 * sizeof(int));
     }
-    int matrix[len1 + 1][len2 + 1];
-    int i;
+    /* int matrix[len1 + 1][len2 + 1]; */
     for (i = 0; i <= len1; i++) {
         matrix[i][0] = i;
     }
@@ -56,7 +56,9 @@ VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
             }
         }
     }
-    return INT2NUM(matrix[len1][len2]);
+    result = matrix[len1][len2];
+    free(matrix);
+    return INT2NUM(result);
 }
 
 void Init_levenshtein_ruby()
