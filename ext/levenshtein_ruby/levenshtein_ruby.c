@@ -6,10 +6,16 @@ VALUE cLevenshtein;
 
 VALUE distance_func(VALUE self, VALUE s_word1, VALUE s_word2)
 {
+    int i;
     char* word1 = StringValuePtr(s_word1);
     char* word2 = StringValuePtr(s_word2);
     int len1 = strlen(word1);
     int len2 = strlen(word2);
+    int** matrix;
+    matrix = (int)malloc(len1 * sizeof(int));
+    for(i = 0; i < len1; i++) {
+      matrix[i] = (int)malloc(len2 * sizeof(int));
+    }
     int matrix[len1 + 1][len2 + 1];
     int i;
     for (i = 0; i <= len1; i++) {
