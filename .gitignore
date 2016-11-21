@@ -11,3 +11,4 @@
 .RUBYARCHDIR.time
 *.bundle
 **/*.out
+**/a.out.dSYM/
